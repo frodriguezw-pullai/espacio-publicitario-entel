@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espacio Premium Plaza Baquedano - Torre 13 | Luminarias Parrague</title>
+    <meta name="description" content="Espacio publicitario premium en el corazon de Santiago. 140,000 impactos diarios. Plaza Baquedano, Torre 13.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Domina el Corazon de Santiago - Plaza Baquedano">
+    <meta property="og:description" content="Espacio publicitario premium. 140,000 impactos diarios.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+    <style>
+        :root {
+            --negro-fondo: #0a0a0a;
+            --negro-card: #141414;
+            --naranja: #FF6B00;
+            --naranja-hover: #ff8533;
+            --blanco: #ffffff;
+            --gris: #b0b0b0;
+            --gris-oscuro: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--negro-fondo);
+            color: var(--blanco);
+            line-height: 1.6;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.4) 50%, rgba(10,10,10,0.8) 100%),
+                        url('imagenes/vista-peatonal.jpeg') center/contain no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, var(--negro-fondo), transparent);
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--naranja);
+            color: var(--blanco);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge-dark {
+            display: inline-block;
+            background: #000000;
+            color: #ffffff;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--naranja);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gris);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--naranja);
+            color: var(--blanco);
+            padding: 1rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .hero-cta:hover {
+            background: var(--naranja-hover);
+            transform: translateY(-2px);
+        }
+
+        /* SECTION TITLES */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-title span {
+            color: var(--naranja);
+        }
+
+        .section-subtitle {
+            color: var(--gris);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+        }
+
+        .gallery-item .overlay h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .gallery-item .overlay p {
+            color: var(--gris);
+            font-size: 0.9rem;
+        }
+
+        /* METRICS */
+        .metrics-section {
+            background: var(--gris-oscuro);
+            padding: 5rem 2rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .metric-card {
+            background: var(--negro-card);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #222;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            border-color: var(--naranja);
+            transform: translateY(-5px);
+        }
+
+        .metric-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            background: var(--naranja);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .metric-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--naranja);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: var(--gris);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* MAP SECTION */
+        .map-section {
+            padding: 5rem 2rem;
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .map-embed {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .map-embed iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        .map-info h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .map-info h2 span {
+            color: var(--naranja);
+        }
+
+        .arterias-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .arterias-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #222;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .arterias-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--naranja);
+            border-radius: 50%;
+        }
+
+        .arterias-list li strong {
+            color: var(--blanco);
+        }
+
+        .arterias-list li span {
+            color: var(--gris);
+            font-size: 0.9rem;
+        }
+
+        /* SPECS SECTION */
+        .specs-section {
+            background: linear-gradient(135deg, var(--naranja) 0%, #cc5500 100%);
+            padding: 4rem 2rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .spec-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* OPPORTUNITY SECTION */
+        .opportunity-section {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: var(--negro-fondo);
+        }
+
+        .opportunity-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem;
+            border: 2px solid var(--naranja);
+            border-radius: 12px;
+            background: var(--negro-card);
+        }
+
+        .opportunity-box h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .opportunity-box p {
+            font-size: 1.3rem;
+            color: var(--gris);
+            margin-bottom: 0.5rem;
+        }
+
+        .opportunity-box .highlight {
+            color: var(--naranja);
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--gris-oscuro);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            color: var(--gris);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-card {
+            background: var(--negro-card);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .contact-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-role {
+            color: var(--naranja);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .contact-info a {
+            color: var(--blanco);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--naranja);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--naranja);
+            color: var(--blanco);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background: var(--naranja-hover);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--negro-fondo);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: #00cc66;
+        }
+
+        .footer p {
+            color: var(--gris);
+            font-size: 0.9rem;
+        }
+
+        .footer-address {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                grid-template-columns: 1fr;
+            }
+
+            .map-embed {
+                order: -1;
+            }
+
+            .specs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .metric-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+
+        /* RENTABILIDAD VS RRSS */
+        .rentabilidad-section {
+            background: var(--negro-fondo);
+        }
+
+        .rentabilidad-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .rentabilidad-big {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--negro-card) 0%, #1a1a1a 100%);
+            border-radius: 16px;
+            border: 2px solid var(--naranja);
+        }
+
+        .rentabilidad-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 6rem;
+            font-weight: 900;
+            color: var(--naranja);
+            line-height: 1;
+        }
+
+        .rentabilidad-label {
+            font-size: 1.5rem;
+            color: var(--blanco);
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .comparativa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .comparativa-card {
+            background: var(--negro-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        .comparativa-card.ooh {
+            border-color: var(--naranja);
+            background: linear-gradient(135deg, rgba(255,107,0,0.1) 0%, var(--negro-card) 100%);
+        }
+
+        .comparativa-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparativa-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparativa-cpm {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.25rem;
+        }
+
+        .comparativa-card.rrss .comparativa-cpm {
+            color: #ff4444;
+        }
+
+        .comparativa-card.ooh .comparativa-cpm {
+            color: #44ff44;
+        }
+
+        .comparativa-card p {
+            color: var(--gris);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparativa-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .comparativa-card ul li {
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: var(--gris);
+            border-bottom: 1px solid #222;
+        }
+
+        .comparativa-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .comparativa-card.rrss ul li::before {
+            content: '✗ ';
+            color: #ff4444;
+        }
+
+        .comparativa-card.ooh ul li::before {
+            content: '✓ ';
+            color: #44ff44;
+        }
+
+        .rentabilidad-nota {
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .rentabilidad-number {
+                font-size: 4rem;
+            }
+
+            .comparativa-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Espacio Premium Disponible</span>
+            <h1>Domina el <span>Corazon</span> de Santiago</h1>
+            <p class="hero-subtitle"><span class="hero-badge-dark">Plaza Baquedano - Torre 13</span></p>
+            <a href="#contacto" class="hero-cta">Solicitar Propuesta</a>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section">
+        <h2 class="section-title">Presencia <span>Iconica</span></h2>
+        <p class="section-subtitle">Un landmark publicitario en el punto mas emblematico de la ciudad. Visibilidad garantizada desde todos los accesos principales.</p>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="imagenes/portada.jpg" alt="Plaza Remodelada" style="object-fit: fill;">
+                <div class="overlay">
+                    <h3>Plaza Remodelada</h3>
+                    <p>Proyecto de renovacion urbana</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="imagenes/foto-nocturna.jpg" alt="Vista nocturna">
+                <div class="overlay">
+                    <h3>Vista Nocturna</h3>
+                    <p>Iluminacion frontal de alta potencia</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="imagenes/foto-mapa.jpg" alt="Punto de encuentro iconico">
+                <div class="overlay">
+                    <h3>Punto de Encuentro Iconico</h3>
+                    <p>El corazon simbolico de Santiago</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="imagenes/andres-bello.jpg" alt="Multiples puntos de vista" style="object-fit: fill;">
+                <div class="overlay">
+                    <h3>Visibilidad 360°</h3>
+                    <p>Visible desde multiples arterias de la ciudad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="metrics-section">
+        <h2 class="section-title">Metricas de <span>Impacto</span></h2>
+        <p class="section-subtitle">Datos basados en estimaciones tecnicas de movilidad urbana (MTT, UOCT, Metro de Santiago)</p>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-icon">&#128200;</div>
+                <div class="metric-number">140K</div>
+                <div class="metric-label">Impactos Diarios</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">&#128663;</div>
+                <div class="metric-number">80K</div>
+                <div class="metric-label">Vehiculos/Dia</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">&#128694;</div>
+                <div class="metric-number">60K</div>
+                <div class="metric-label">Peatones/Dia</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">&#128065;</div>
+                <div class="metric-number">3.2M</div>
+                <div class="metric-label">OTS Mensual</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">&#127919;</div>
+                <div class="metric-number">33%</div>
+                <div class="metric-label">Reach Mensual</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">&#128260;</div>
+                <div class="metric-number">2.3x</div>
+                <div class="metric-label">Frecuencia</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-info">
+                <h2>Ubicacion <span>Estrategica</span></h2>
+                <p style="color: var(--gris);">En el corazon simbolico de Santiago, donde confluyen las principales arterias de la ciudad. Un nodo urbano que nunca descansa.</p>
+
+                <ul class="arterias-list">
+                    <li>
+                        <strong>Av. Providencia</strong>
+                        <span>Flujo vehicular principal</span>
+                    </li>
+                    <li>
+                        <strong>Av. Andres Bello</strong>
+                        <span>Conexion oriente-poniente</span>
+                    </li>
+                    <li>
+                        <strong>Av. Bellavista</strong>
+                        <span>Acceso zona bohemia</span>
+                    </li>
+                    <li>
+                        <strong>Pio Nono</strong>
+                        <span>Alto trafico peatonal</span>
+                    </li>
+                    <li>
+                        <strong>Metro Baquedano</strong>
+                        <span>Lineas 1 y 5</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="map-embed">
+                <a href="https://www.google.com/maps/place/-33.4385278,-70.6357500/@-33.4385278,-70.6357500,17z" target="_blank" title="Ver en Google Maps">
+                    <img
+                        src="imagenes/google-maps.jpg"
+                        alt="Ubicacion Carabineros de Chile 33, Santiago"
+                        style="width: 100%; height: auto; cursor: pointer; border-radius: 12px;"
+                    >
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECS -->
+    <section class="specs-section">
+        <div class="specs-grid">
+            <div class="spec-item">
+                <h3>664 m2</h3>
+                <p>Superficie Total</p>
+            </div>
+            <div class="spec-item">
+                <h3>22 x 7m</h3>
+                <p>Por Cara</p>
+            </div>
+            <div class="spec-item">
+                <h3>2 Caras</h3>
+                <p>Norte y Oriente</p>
+            </div>
+            <div class="spec-item">
+                <h3>24/7</h3>
+                <p>Iluminacion</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHARE OF VOICE -->
+    <section class="section rentabilidad-section">
+        <h2 class="section-title">100% <span>Share of Voice</span></h2>
+        <p class="section-subtitle">En el punto mas emblematico de Santiago</p>
+
+        <div class="rentabilidad-container">
+            <div class="rentabilidad-big">
+                <div class="rentabilidad-number">100%</div>
+                <div class="rentabilidad-label">Dominio Visual Total</div>
+            </div>
+
+            <div class="comparativa-grid">
+                <div class="comparativa-card ooh">
+                    <div class="comparativa-icon">&#127961;</div>
+                    <h3>664 m²</h3>
+                    <div class="comparativa-cpm" style="color: var(--naranja);">El mas grande</div>
+                    <p>de la zona</p>
+                    <ul>
+                        <li>Superficie total unica</li>
+                        <li>22 x 7 metros por cara</li>
+                        <li>2 caras: Norte y Oriente</li>
+                        <li>Visibilidad desde todos los accesos</li>
+                    </ul>
+                </div>
+
+                <div class="comparativa-card ooh">
+                    <div class="comparativa-icon">&#9733;</div>
+                    <h3>Exclusividad</h3>
+                    <div class="comparativa-cpm" style="color: var(--naranja);">Sin competencia</div>
+                    <p>visual directa</p>
+                    <ul>
+                        <li>Unico soporte de su tipo en la plaza</li>
+                        <li>Presencia ininterrumpida 24/7</li>
+                        <li>Ubicacion iconica nacional</li>
+                        <li>Iluminacion frontal de alta potencia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="rentabilidad-nota">Tu marca sera la unica protagonista en el corazon de Santiago. Sin distracciones. Sin competencia.</p>
+        </div>
+    </section>
+
+    <!-- OPPORTUNITY -->
+    <section class="opportunity-section">
+        <div class="opportunity-box">
+            <h2>La Oportunidad</h2>
+            <p>Este espacio fue territorio de <strong>Claro</strong> por años.</p>
+            <p>Hoy está disponible para una nueva marca.</p>
+            <p class="highlight">¿Quién dominará mañana?</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contacto">
+        <div class="cta-content">
+            <h2>Solicita tu Propuesta</h2>
+            <p>Contáctanos para conocer disponibilidad y condiciones comerciales.</p>
+
+            <div class="contact-card">
+                <div class="contact-name">Claudio Parrague</div>
+                <div class="contact-role">Luminarias Parrague</div>
+
+                <div class="contact-info">
+                    <a href="mailto:contacto@luminariasparrague.cl">
+                        &#9993; contacto@luminariasparrague.cl
+                    </a>
+                </div>
+
+                <a href="mailto:contacto@luminariasparrague.cl?subject=Consulta%20Espacio%20Plaza%20Baquedano" class="cta-button">
+                    Enviar Consulta
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">Luminarias <span>Parrague</span></div>
+        <p>Soluciones publicitarias de alto impacto</p>
+    </footer>
+
+</body>
+</html>
